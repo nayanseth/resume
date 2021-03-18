@@ -1,0 +1,191 @@
+\documentclass[a4paper,12pt]{article} % type of document
+
+\usepackage[a4paper, left=1cm,top=1cm,right=1cm,bottom=1.9cm]{geometry} % for page margins
+\usepackage{titlesec} % format section
+\usepackage{fancyhdr}
+\usepackage[english]{babel} % for hyphenation
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{hyperref}
+\fancyhf{}
+\fancyfoot{}
+
+
+\raggedbottom
+\setlength{\parindent}{0em} % remove indentation for text in document
+
+\titleformat{\section}[hang]{\vspace{-1.5em}\scshape\raggedright\large}{\thesection.}{0em}{}
+
+% Defining Custom Commands
+\newcommand{\fourElementListStart}{\begin{itemize}[label={},leftmargin=*]\setlength\itemsep{1em}}
+\newcommand{\fourElementListEnd}{\end{itemize}}
+\newcommand{\generalListStart}{\begin{itemize}[leftmargin=2em]\setlength\itemsep{0.02em}}
+\newcommand{\generalListEnd}{\end{itemize}}
+
+
+\newcommand{\fourElementItem}[4]{
+	\vspace{-0.5em}\item
+		\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+			\textbf{#1} & {\small{#2}} \\[0.2em]
+			{#3} & {\small{#4}} \\[0.2em]
+		\end{tabular*}\vspace{-0.7em}
+}
+
+\newcommand{\twoKeyValuePairElementItem}[4]{
+	\vspace{-1em}\item
+		\begin{tabular}{@{}p{7cm}p{11cm}}
+
+			\vspace{0.5em}\textbf{#1}{: #2} & \vspace{0.5em}\textbf{#3}{: #4}
+
+		\end{tabular}\vspace{-1.2em}
+}
+
+\newcommand{\oneKeyValuePairElement}[2]{
+	\item \textbf{#1}{: #2}
+}
+
+\newcommand{\oneValueOneKeyValueItem}[3]{
+	\vspace{-1.5em}\item
+		\begin{tabular}{@{}p{7.5cm}p{11cm}}
+
+			\vspace{0.5em}\textbf{#1} & \vspace{0.5em}\textbf{#2}{: #3}
+
+		\end{tabular}\vspace{-1.2em}
+}
+
+\newcommand{\oneValueTwoKeyValueItem}[5]{
+	\vspace{-1.5em}\item
+		\begin{tabular}{@{}p{7.5cm}p{11cm}}
+
+			\vspace{1.2em}\multirow{2}{*}{\textbf{#1}} & \vspace{0.5em}\textbf{#2}{: #3} \\
+			& \textbf{#4}{: #5}
+
+		\end{tabular}\vspace{-1.2em}
+}
+
+
+
+
+\newcommand{\threeKeyValuePairElementItem}[4]{
+	\vspace{-1.5em}\item
+		\begin{tabular}{@{}p{7.5cm}p{11cm}}
+
+			\vspace{1.2em}\multirow{2}{*}{\textbf{#1}{: #2}} & \vspace{0.5em}\textbf{Education}{: #3} \\
+			& \textbf{Profession}{: #4}
+
+		\end{tabular}\vspace{-1.2em}
+}
+
+\newcommand{\fourKeyValuePairElementItem}[8]{
+	\vspace{-1.5em}\item
+		\begin{tabular}{@{}p{7.5cm}p{11cm}}
+
+			\vspace{0.5em}{\textbf{#1}{: #2}} & \vspace{0.5em}\textbf{#3}{: #4} \\
+			{\textbf{#5}{: #6}} & \textbf{#7}{: #8}
+
+		\end{tabular}\vspace{-1.2em}
+}
+
+
+\begin{document}
+
+% ----------------------------
+% HEADER
+% ----------------------------
+
+	\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+		\textbf{\Large{Nayan Seth}} & {+1-000-000-0000 / \href{mailto:email@email.com}{email@email.com}} \\
+		\href{https://www.linkedin.com/in/nayanseth/}{https://www.linkedin.com/in/nayanseth/} & \href{http://github.com/nayanseth/}{http://github.com/nayanseth/} \\[5pt]
+
+		\hline \\[0pt]  % put a line under headers
+	\end{tabular*}
+
+% ----------------------------
+% WORK
+% ----------------------------
+\section*{Work Experience}
+
+\fourElementListStart
+	\fourElementItem {Cisco Systems Inc.}{San Jose, CA, USA}
+	{Software Engineer}{Aug 2017 - Present}
+\fourElementListEnd
+
+\generalListStart
+	\item Developed a web app to enable next generation of network automation using Software Defined Networking
+	\item Designed \& developed micro-services for quick and efficient processing of tasks
+	\item Triaged issues via heap dumps and performance monitoring tools for scale \& performance
+	\item Built a generic data verification framework for integration tests which makes use of builder pattern and Java 8 lambdas
+	\item Developed a repository of Python automation scripts to save time and increase productivity of fellow colleagues. A total of 1,000+ hrs of development time was saved.
+	\item Used Python to build a scale testing framework
+	\oneKeyValuePairElement{Patent}{Underlay Network Formation (US10721133B2)}
+
+\generalListEnd
+
+
+%\fourElementListStart
+%	\fourElementItem {Ericsson Inc.}{Santa Clara, CA, USA}
+%	{Software Develoment Intern}{May 2016 - Aug 2016}
+%\fourElementListEnd
+
+%\generalListStart
+%	\item Developed an interactive demo in Mixed Reality and Virtual Reality which was showcased at IBC 2016
+
+%\generalListEnd
+
+% ----------------------------
+% EDUCATION
+% ----------------------------
+\vspace{1em}\section*{Education}
+
+\fourElementListStart
+	\fourElementItem {Ira A. Fulton School of Engineering, Arizona State University}{Tempe, AZ, USA}
+	{Master of Science, Computer Science}{Aug 2015 - May 2017}
+	\generalListStart
+		\item \textbf{GPA} 3.7/4
+		\item \textbf{Thesis} Real Time Cross Platform Collaboration between Mixed \& Virtual Reality
+	\generalListEnd
+	\vspace{-0.5em}\fourElementItem {Dwarkadas J. Sanghvi College of Engineering, University of Mumbai}{Mumbai, MH, IN}
+	{Bachelor of Enginerring, Computer Engineering}{Aug 2011 - June 2015}
+\fourElementListEnd
+
+% ----------------------------
+% SKILLS
+% ----------------------------
+
+\vspace{1em}\section*{Skills}
+
+\generalListStart
+	\oneKeyValuePairElement{Languages}{Java, Python, C\#, R, HTML, CSS, JS, PHP, C, AppleScript}
+	\twoKeyValuePairElementItem{Frameworks}{Java Spring, Hibernate}{Databases}{PostgreSQL, MySQL, MongoDB}
+	%\twoKeyValuePairElementItem{Version Control}{Git}{Gaming Engines}{Unity3D}
+	%\twoKeyValuePairElementItem{Image Processing}{MatLab}{Media Apps}{Photoshop, Final Cut Pro X}
+\generalListEnd
+
+% ----------------------------
+% PROJECTS
+% ----------------------------
+
+\vspace{0.5em}\section*{Projects}
+\generalListStart
+	\oneKeyValuePairElement{VR Cricket}{Built a game of cricket for Virtual Reality}
+	\oneKeyValuePairElement{VR Headset}{Built an economical VR headset which tracks head movements using 3 Point LED tracking system and can be integrated with Unity3D game engine}
+	\oneKeyValuePairElement{eCommerce}{Built an e-commerce web app using PHP and relational database MySQL}
+	\oneKeyValuePairElement{SDN}{Built a load balancer for open source SDN frameworks like Open Daylight and Floodlight}
+	\oneKeyValuePairElement{XSS Lib}{Built a library for developers to sanitize input to prevent cross site scripting}
+\generalListEnd
+
+% ----------------------------
+% MILESTONES
+% ----------------------------
+
+\vspace{0.5em}\section*{Milestones}
+
+\generalListStart
+	\oneKeyValuePairElement{YouTube Partner}{One of the first 40 YouTube Partners in India}
+	\oneKeyValuePairElement{YouTube}{Garnered more than 3 million views and 10,000+ subscribers}
+	\oneKeyValuePairElement{Book}{Published a book on AppleScript which has been downloaded over 15,000 times}
+\generalListEnd
+
+
+
+\end{document}
