@@ -31,6 +31,14 @@
 		\end{tabular*}\vspace{-0.7em}
 }
 
+\newcommand{\twoElementItem}[2]{
+	\vspace{-1em}\item
+		\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+			{#1} & {\small{#2}} \\[0.2em]
+		\end{tabular*}\vspace{-1em}
+}
+
+
 \newcommand{\twoKeyValuePairElementItem}[4]{
 	\vspace{-1em}\item
 		\begin{tabular}{@{}p{7cm}p{11cm}}
@@ -41,7 +49,7 @@
 }
 
 \newcommand{\oneKeyValuePairElement}[2]{
-	\item \textbf{#1}{: #2}
+	\item \textbf{#1}{ #2}
 }
 
 \newcommand{\oneValueOneKeyValueItem}[3]{
@@ -107,19 +115,21 @@
 
 \fourElementListStart
 	\fourElementItem {Cisco Systems Inc.}{San Jose, CA, USA}
-	{Software Engineer}{Aug 2017 - Present}
+	{Software Engineer III}{Aug 2019 - Present}
+	\twoElementItem {Software Engineer II}{Aug 2017 - July 2019}
+
 \fourElementListEnd
 
 \generalListStart
-	\item Developed a web app to enable next generation of network automation using Software Defined Networking
+	\item Working on Cisco DNA Center to enable next generation of network automation using Software Defined Networking
 	\item Designed \& developed micro-services for quick and efficient processing of tasks
 	\item Triaged issues via heap dumps and performance monitoring tools for scale \& performance
 	\item Built a generic data verification framework for integration tests which makes use of builder pattern and Java 8 lambdas
 	\item Developed a repository of Python automation scripts to save time and increase productivity of fellow colleagues. A total of 1,000+ hrs of development time was saved.
 	\item Used Python to build a scale testing framework
 	\oneKeyValuePairElement{Patent}{Underlay Network Formation (US10721133B2)}
-
 \generalListEnd
+
 
 
 %\fourElementListStart
@@ -135,7 +145,7 @@
 % ----------------------------
 % EDUCATION
 % ----------------------------
-\vspace{1em}\section*{Education}
+\vspace{0.2em}\section*{Education}
 
 \fourElementListStart
 	\fourElementItem {Ira A. Fulton School of Engineering, Arizona State University}{Tempe, AZ, USA}
@@ -152,7 +162,7 @@
 % SKILLS
 % ----------------------------
 
-\vspace{1em}\section*{Skills}
+\vspace{0.2em}\section*{Skills}
 
 \generalListStart
 	\oneKeyValuePairElement{Languages}{Java, Python, C\#, R, HTML, CSS, JS, PHP, C, AppleScript}
@@ -165,9 +175,10 @@
 % PROJECTS
 % ----------------------------
 
-\vspace{0.5em}\section*{Projects}
+\vspace{0.2em}\section*{Projects}
 \generalListStart
 	\oneKeyValuePairElement{VR Cricket}{Built a game of cricket for Virtual Reality}
+	\oneKeyValuePairElement{Astra}{Built a game using Virtual Reality and leap motion for real time hand tracking}
 	\oneKeyValuePairElement{VR Headset}{Built an economical VR headset which tracks head movements using 3 Point LED tracking system and can be integrated with Unity3D game engine}
 	\oneKeyValuePairElement{eCommerce}{Built an e-commerce web app using PHP and relational database MySQL}
 	\oneKeyValuePairElement{SDN}{Built a load balancer for open source SDN frameworks like Open Daylight and Floodlight}
@@ -178,11 +189,10 @@
 % MILESTONES
 % ----------------------------
 
-\vspace{0.5em}\section*{Milestones}
+\vspace{0.2em}\section*{Milestones}
 
 \generalListStart
-	\oneKeyValuePairElement{YouTube Partner}{One of the first 40 YouTube Partners in India}
-	\oneKeyValuePairElement{YouTube}{Garnered more than 3 million views and 10,000+ subscribers}
+	\oneKeyValuePairElement{YouTube Partner}{One of the first 40 YouTube Partners in India. Garnered more than 3 million views and 10,000+ subscribers}
 	\oneKeyValuePairElement{Book}{Published a book on AppleScript which has been downloaded over 15,000 times}
 \generalListEnd
 
