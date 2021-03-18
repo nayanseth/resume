@@ -10,42 +10,52 @@
 \fancyhf{}
 \fancyfoot{}
 
-
 \raggedbottom
 \setlength{\parindent}{0em} % remove indentation for text in document
+\pagestyle{empty} % Remove page numbers
 
-\titleformat{\section}[hang]{\vspace{-1.5em}\scshape\raggedright\large}{\thesection.}{0em}{}
+% Variables %
+
+\newcommand\titleVerticalSpace{-1.5em}
+\newcommand\tableVerticalSpace{-1em}
+\newcommand\tableItemVerticalSpace{-1em}
+\newcommand\zeroSpacing{0em}
+\newcommand\sectionSpacing{0.5em}
+
+
+\titleformat{\section}[hang]{\vspace{\titleVerticalSpace}\scshape\raggedright\large}{\thesection}{\zeroSpacing}{}
 
 % Defining Custom Commands
-\newcommand{\fourElementListStart}{\begin{itemize}[label={},leftmargin=*]\setlength\itemsep{1em}}
-\newcommand{\fourElementListEnd}{\end{itemize}}
-\newcommand{\generalListStart}{\begin{itemize}[leftmargin=2em]\setlength\itemsep{0.02em}}
-\newcommand{\generalListEnd}{\end{itemize}}
+\newcommand{\fourElementListStart}{\begin{itemize}[label={},leftmargin=*]\setlength\itemsep{0.3em}}
+\newcommand{\fourElementListEnd}{\end{itemize}\vspace{\zeroSpacing}}
+\newcommand{\generalListStart}{\vspace{-0.5em}\begin{itemize}[leftmargin=2em]\setlength\itemsep{-0.4em}}
+\newcommand{\generalListEnd}{\end{itemize}\vspace{\zeroSpacing}}
+\newcommand{\generalSubListStart}{\vspace{-1em}\begin{itemize}[leftmargin=2em]\setlength\itemsep{-0.2em}}
+\newcommand{\generalSubListEnd}{\end{itemize}\vspace{\zeroSpacing}}
 
 
-\newcommand{\fourElementItem}[4]{
-	\vspace{-0.5em}\item
+\newcommand{\institutionItem}[2]{
+	\vspace{\tableItemVerticalSpace}\item
 		\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
-			\textbf{#1} & {\small{#2}} \\[0.2em]
-			{#3} & {\small{#4}} \\[0.2em]
-		\end{tabular*}\vspace{-0.7em}
+			\textbf{#1} & {\small{#2}} \\[\zeroSpacing]
+		\end{tabular*}\vspace{\tableVerticalSpace}
 }
 
 \newcommand{\twoElementItem}[2]{
-	\vspace{-1em}\item
+	\vspace{\tableItemVerticalSpace}\item
 		\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
-			{#1} & {\small{#2}} \\[0.2em]
-		\end{tabular*}\vspace{-1em}
+			{#1} & {\small{#2}} \\[\zeroSpacing]
+		\end{tabular*}\vspace{\tableVerticalSpace}
 }
 
 
 \newcommand{\twoKeyValuePairElementItem}[4]{
-	\vspace{-1em}\item
+	\vspace{\tableItemVerticalSpace}\item
 		\begin{tabular}{@{}p{7cm}p{11cm}}
 
-			\vspace{0.5em}\textbf{#1}{: #2} & \vspace{0.5em}\textbf{#3}{: #4}
+			\vspace{0.5em}\textbf{#1}{ #2} & \vspace{0.5em}\textbf{#3}{ #4}
 
-		\end{tabular}\vspace{-1.2em}
+		\end{tabular}\vspace{\tableVerticalSpace}
 }
 
 \newcommand{\oneKeyValuePairElement}[2]{
@@ -101,12 +111,12 @@
 % HEADER
 % ----------------------------
 
-	\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
-		\textbf{\Large{Nayan Seth}} & {+1-000-000-0000 / \href{mailto:email@email.com}{email@email.com}} \\
-		\href{https://www.linkedin.com/in/nayanseth/}{https://www.linkedin.com/in/nayanseth/} & \href{http://github.com/nayanseth/}{http://github.com/nayanseth/} \\[5pt]
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+	\textbf{\Large{Nayan Seth}} & {+1-000-000-0000 / \href{mailto:email@email.com}{email@email.com}} \\
+	\href{https://www.linkedin.com/in/nayanseth/}{https://www.linkedin.com/in/nayanseth/} & \href{http://github.com/nayanseth/}{http://github.com/nayanseth/} \\[5pt]
 
-		\hline \\[0pt]  % put a line under headers
-	\end{tabular*}
+	\hline \\[0pt]  % put a line under headers
+\end{tabular*}
 
 % ----------------------------
 % WORK
@@ -114,59 +124,56 @@
 \section*{Work Experience}
 
 \fourElementListStart
-	\fourElementItem {Cisco Systems Inc.}{San Jose, CA, USA}
-	{Software Engineer III}{Aug 2019 - Present}
+	\institutionItem {Cisco Systems Inc.}{San Jose, CA, USA}
+	\twoElementItem {Software Engineer III}{Aug 2019 - Present}
 	\twoElementItem {Software Engineer II}{Aug 2017 - July 2019}
-
 \fourElementListEnd
 
 \generalListStart
-	\item Working on Cisco DNA Center to enable next generation of network automation using Software Defined Networking
-	\item Designed \& developed micro-services for quick and efficient processing of tasks
+	\item Designed \& developed micro-services using RabbitMq, Java Spring, Docker and Kubernetes for quick and efficient processing of tasks
 	\item Triaged issues via heap dumps and performance monitoring tools for scale \& performance
 	\item Built a generic data verification framework for integration tests which makes use of builder pattern and Java 8 lambdas
 	\item Developed a repository of Python automation scripts to save time and increase productivity of fellow colleagues. A total of 1,000+ hrs of development time was saved.
 	\item Used Python to build a scale testing framework
-	\oneKeyValuePairElement{Patent}{Underlay Network Formation (US10721133B2)}
+	\oneKeyValuePairElement{Patent}{Underlay Network Formation (US10721133B2) granted on 21st July, 2020}
 \generalListEnd
 
+\fourElementListStart
+	\institutionItem {Ericsson Inc.}{Santa Clara, CA, USA}
+	\twoElementItem{Software Develoment Intern}{May 2016 - Aug 2016}
+\fourElementListEnd
 
-
-%\fourElementListStart
-%	\fourElementItem {Ericsson Inc.}{Santa Clara, CA, USA}
-%	{Software Develoment Intern}{May 2016 - Aug 2016}
-%\fourElementListEnd
-
-%\generalListStart
-%	\item Developed an interactive demo in Mixed Reality and Virtual Reality which was showcased at IBC 2016
-
-%\generalListEnd
+\generalListStart
+	\item Developed an interactive demo in Mixed Reality and Virtual Reality which was showcased at IBC 2016\vspace{-1em}
+\generalListEnd
 
 % ----------------------------
 % EDUCATION
 % ----------------------------
-\vspace{0.2em}\section*{Education}
+\vspace{\sectionSpacing}\section*{Education}
 
 \fourElementListStart
-	\fourElementItem {Ira A. Fulton School of Engineering, Arizona State University}{Tempe, AZ, USA}
-	{Master of Science, Computer Science}{Aug 2015 - May 2017}
-	\generalListStart
+	\institutionItem {Ira A. Fulton School of Engineering, Arizona State University}{Tempe, AZ, USA}
+	\twoElementItem {Master of Science, Computer Science}{Aug 2015 - May 2017}
+	\generalSubListStart
 		\item \textbf{GPA} 3.7/4
 		\item \textbf{Thesis} Real Time Cross Platform Collaboration between Mixed \& Virtual Reality
-	\generalListEnd
-	\vspace{-0.5em}\fourElementItem {Dwarkadas J. Sanghvi College of Engineering, University of Mumbai}{Mumbai, MH, IN}
-	{Bachelor of Enginerring, Computer Engineering}{Aug 2011 - June 2015}
+	\generalSubListEnd
+	\institutionItem {Dwarkadas J. Sanghvi College of Engineering, University of Mumbai}{Mumbai, MH, IN}
+	\twoElementItem {Bachelor of Enginerring, Computer Engineering}{Aug 2011 - June 2015}
 \fourElementListEnd
 
 % ----------------------------
 % SKILLS
 % ----------------------------
 
-\vspace{0.2em}\section*{Skills}
+\vspace{\sectionSpacing}\section*{Skills}
 
 \generalListStart
 	\oneKeyValuePairElement{Languages}{Java, Python, C\#, R, HTML, CSS, JS, PHP, C, AppleScript}
 	\twoKeyValuePairElementItem{Frameworks}{Java Spring, Hibernate}{Databases}{PostgreSQL, MySQL, MongoDB}
+	\vspace{-0.5em}\twoKeyValuePairElementItem{Messaging}{Kafka, RabbitMq}{OS}{macOS, Linux Kernel, Windows}
+	\vspace{-0.5em}\twoKeyValuePairElementItem{Cloud}{Kubernetes, Docker, Elasticsearch}{Virtualization}{VMWare, ESXI, KDE}
 	%\twoKeyValuePairElementItem{Version Control}{Git}{Gaming Engines}{Unity3D}
 	%\twoKeyValuePairElementItem{Image Processing}{MatLab}{Media Apps}{Photoshop, Final Cut Pro X}
 \generalListEnd
@@ -175,21 +182,21 @@
 % PROJECTS
 % ----------------------------
 
-\vspace{0.2em}\section*{Projects}
+\vspace{\sectionSpacing}\section*{Projects}
 \generalListStart
 	\oneKeyValuePairElement{VR Cricket}{Built a game of cricket for Virtual Reality}
 	\oneKeyValuePairElement{Astra}{Built a game using Virtual Reality and leap motion for real time hand tracking}
 	\oneKeyValuePairElement{VR Headset}{Built an economical VR headset which tracks head movements using 3 Point LED tracking system and can be integrated with Unity3D game engine}
 	\oneKeyValuePairElement{eCommerce}{Built an e-commerce web app using PHP and relational database MySQL}
 	\oneKeyValuePairElement{SDN}{Built a load balancer for open source SDN frameworks like Open Daylight and Floodlight}
-	\oneKeyValuePairElement{XSS Lib}{Built a library for developers to sanitize input to prevent cross site scripting}
+	\oneKeyValuePairElement{XSS Lib}{Built a library for developers to sanitize input to prevent cross site scripting}\vspace{-1em}
 \generalListEnd
 
 % ----------------------------
 % MILESTONES
 % ----------------------------
 
-\vspace{0.2em}\section*{Milestones}
+\vspace{\sectionSpacing}\section*{Milestones}
 
 \generalListStart
 	\oneKeyValuePairElement{YouTube Partner}{One of the first 40 YouTube Partners in India. Garnered more than 3 million views and 10,000+ subscribers}
